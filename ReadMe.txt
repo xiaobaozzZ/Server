@@ -1,3 +1,2 @@
-本版本主要工作: 使用thymeleaf完成动态页面
-
-AJAX
+﻿本项目是实现了一个类TomCat的小项目,运行WebServer类启动服务器,项目中的webapps中包含有测试网页
+conf中存放了保存文件类别的xml文件
