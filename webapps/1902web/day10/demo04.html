@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>倒计时</title>
+<script type="text/javascript">
+	onload = function(){
+		var d = new Date();
+		h1.innerText = d.toLocaleTimeString();
+		setInterval(function(){
+			var d = new Date();
+			h1.innerText = d.toLocaleTimeString();
+		},1000);
+	}
+	
+	
+	
+	
+	var total = 0;
+	function fn(){
+		b1.disabled = true;
+		total = i1.value*3600+i2.value*60+parseInt(i3.value);
+		showTime();
+		var timer = setInterval(function(){
+			total--;
+			showTime();
+			if(total<=0){
+				clearInterval(timer);
+				b1.disabled = false;
+			}
+			showTime();
+		},1000);
+		function showTime(){
+			var h = parseInt(total/3600);
+			var m =parseInt(total%3600/60);
+			var s = total%60;
+			h = h<10?"0"+h:h;
+			m = m<10?"0"+m:m;
+			s = s<10?"0"+s:s;
+			h2.innerText = h+":"+m+":"+s;
+		}
+	}
+	setTimeout(function(){
+		alert("zouba");
+	},2000)
+</script>
+</head>
+<body>
+<h3 id="h1"></h3>
+<input type="text" id="i1" placeholder="小时">
+<input type="text" id="i2" placeholder="分钟">
+<input type="text" id="i3" placeholder="秒">
+<input type="button" value="开始" onclick="fn()" id="b1">
+<h2 id="h2"></h2>
+</body>
+</html>

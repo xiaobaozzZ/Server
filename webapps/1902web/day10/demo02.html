@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片循环显示2</title>
+<style type="text/css">
+	div,img{
+		width:200px;
+		height:150px;
+	}
+	img{
+		 display:none; 
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		imgs[0].style.display = "inline-block";
+	}
+	var x = 1;
+	setInterval(function(){
+		var d = x++%3;
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].style.display = i==d?"inline-block":"none";
+		}
+	},1000)
+</script>
+</head>
+<body>
+<div>
+	<img src="../qb/a.jpg">
+	<img src="../qb/b.jpg">
+	<img src="../qb/c.jpg">
+</div>
+</body>
+</html>

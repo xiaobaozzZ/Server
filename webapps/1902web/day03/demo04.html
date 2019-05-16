@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*#d1 span{
+		color:red;
+	}
+	#d1 div span{
+		color:red;
+	}
+	*/
+	/* div div div span{
+		color:red;
+	} */
+	/*匹配body里面的div里面的子元素span*/
+	body>div>span{
+		color:red;
+	}
+	/*匹配span3和span4*/
+	body>div>div>span{
+		color:blue;
+	}
+	/*让span1绿色*/
+	body>span{
+		color:green;
+	}
+	/*让span5紫色*/
+	div div div span{
+		color:purple;
+	}
+</style>
+</head>
+<body>
+	<span>span1</span>
+	<div id="d1">
+		<span>span2</span>
+		<div>
+			<span>span3</span>
+		</div>
+		<div>
+			<span>span4</span>
+			<div>
+				<span>span5</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input:eq(1)").click(function(){
+			var li = $("<li></li>");
+			li.text($("input:first").val());
+			$("ul").prepend(li);
+		})
+		
+		$("input:eq(2)").click(function(){
+			var text = $("input:first").val();
+			var li = $("<li>"+text+"</li>");
+			$("ul").append(li);
+		})
+		
+		$("input:eq(3)").click(function(){
+			var text = $("input:first").val();
+			var li = $("<li>"+text+"</li>");
+			$("li:contains('上海')").before(li);
+		})
+		
+		$("input:eq(4)").click(function(){
+			var text = $("input:first").val();
+			var li = $("<li>"+text+"</li>");
+			$("li:contains('上海')").after(li);
+		})
+		
+		$("input:eq(5)").click(function(){
+			$("li:contains('上海')").remove();
+		})
+	})
+</script>
+</head>
+<body>
+<input type="text">
+<input type="button" value="添加到最前面">
+<input type="button" value="添加到最后面">
+<input type="button" value="插入到上海前面">
+<input type="button" value="插入到上海后面">
+<input type="button" value="删除上海">
+<hr>
+<ul>
+	<li>北京</li>
+	<li>上海</li>
+	<li>广州</li>
+</ul>
+</body>
+</html>

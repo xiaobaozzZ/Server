@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录页面</title>
+</head>
+<body>
+	<center>
+		<h1>欢迎登录</h1>
+		<form action="login" method="post">
+			<table>
+				<tr>
+					<td>用户名:</td>
+					<td><input type = "text" size = "30" name = "user"></td>
+				</tr>
+				<tr>
+					<td>密&nbsp;&nbsp;码:</td>
+					<td><input type = "password" size = "30" name = "password"></td>
+				</tr>
+				
+				<tr>
+					<td>验证码</td>
+					<td><input name = "code" type = "text" align = "center" colspan = "2">
+						<img src="./random.jpg">
+					</td>
+				</tr>
+				<tr>
+					<td clospan = "2"> <input type = "submit" value = "登录"></td>
+				</tr>
+			</table>
+		</form>
+		<a href = "reg.html">去注册</a>
+	</center>
+</body>
+</html>

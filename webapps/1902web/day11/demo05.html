@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 1000px;
+		height: 1000px;
+		border: 1px solid red;
+	}
+	img{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+</style>
+<script type="text/javascript">
+	function downfn(){
+		console.log("鼠标按下");
+		var x = event.clientX;
+		var y = event.clientY;
+		var img = document.createElement("img");
+		img.src = "../Camera Roll/4.jpg";
+		img.style.left=x+"px";
+		img.style.top=y+"px";
+		document.body.appendChild(img);
+	}
+	function upfn(){
+		console.log("鼠标抬起");
+	}
+	function movefn(){
+		console.log("鼠标移入进去");
+	}
+</script>
+</head>
+<body>
+<div onmousedown="downfn()" onmouseup="upfn()" onmousemove="movefn()"></div>
+</body>
+</html>

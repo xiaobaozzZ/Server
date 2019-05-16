@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>表单选择器</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+div,span {
+	width: 140px;
+	height: 140px;
+	margin: 20px;
+	background: #9999CC;
+	border: #000 1px solid;
+	float: left;
+	font-size: 17px;
+	font-family: Roman;
+}
+
+div.mini {
+	font-size: 14px;
+    height: 53px;
+    width: 47px;
+	background: #CC66FF;
+	border: #000 1px solid;
+	font-family: Roman;
+}
+input{ margin: 5px 5px; }
+</style>
+
+<!--引入jquery的js库-->
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/* ---------表单选择器练习--------- */
+		//改变所有:input 元素的背景色为 #F08080" id="b1"
+		$("#b1").click(function(){
+			$(":input").css("background-color","#F08080");
+		})
+		
+
+		//改变:password 元素的背景色为 #9ACD32" id="b2" 
+		$("#b2").click(function(){
+			$(":password").css("background-color","#9ACD32");
+		})
+
+		
+		//弹出 :radio 元素的个数" id="b3"
+		$("#b3").click(function(){
+			alert($(":radio").length);
+		})
+
+		
+		//弹出所有 :checked 元素的value值" id="b4"
+		$("#b4").click(function(){
+			/*for(var i=0;i<$(":checked").length;i++){
+				alert($(":checked")[i].value);
+			}*/
+			
+			$(":checked").each(function(){
+				 //this代表遍历的js对象
+				 alert(this.value);
+			})
+		})
+		
+		
+		//弹出所有 :selected 元素的value值" id="b5"
+		$("#b5").click(function(){
+			alert($(":selected").val());
+		})
+
+		
+	})
+</script>
+</head>
+
+<body>
+	<input type="button" value=" 改变所有input 元素的背景色为 #F08080" id="b1" />
+	<input type="button" value=" 改变:password 元素的背景色为 #9ACD32" id="b2" />
+	<input type="button" value=" 打印 :radio 元素的个数" id="b3" />
+	<input type="button" value=" 打印所有 :checked 元素的value值" id="b4" />
+	<input type="button" value=" 打印所有 :selected 元素的value值" id="b5" />
+
+	<h1>天气冷了</h1>
+	用户名：<input type="text" disabled="disabled" name="username" value="被禁用了"/>
+	密码：<input type="password" name="password" value="123"/>
+	性别：<input type="radio" name="gender" value="man"/> 男
+		<input type="radio" name="gender" value="woman" checked="checked" />女
+	<br>
+	<br>
+	爱好：
+		<input type="checkbox" name="like" value="lanqiu"  checked="checked" /> 篮球
+		<input type="checkbox" name="like" value="taiqiu"/> 台球
+		<input type="checkbox" name="like" value="zuqiu"/> 足球
+	出生地：
+		<select name="city">
+			<option value="beijing">北京</option>
+			<option value="shanghai" selected="selected">上海</option>
+			<option value="guangzhou">广州</option>
+		</select>
+	简介：
+		<textarea name="discription" rows="2" cols="10">请求输入个人描述...</textarea>
+		
+</body>
+</html>
+
+
+

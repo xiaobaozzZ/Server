@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	setInterval(function(){
+		var img = $("<img src='../Camera Roll/4.jpg'>");
+		img.css("position","absolute");
+		var top = parseInt(Math.random()*1000);
+		img.css("top",top+"px");
+		$("body").append(img);
+		img.animate({"left":"1800px"},1000).fadeOut(1000,function(){
+			img.remove();
+		});
+	},100);
+</script>
+<style type="text/css">
+	img{
+		width: 100px;
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>

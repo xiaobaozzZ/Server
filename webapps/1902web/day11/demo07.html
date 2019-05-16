@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div,p,input{
+		border:1px solid red;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		//通过事件源来区分点击的内容
+		var obj = event.target||event.srcElement;
+		//得到标签名
+		if(obj.nodeName=="DIV"){
+			alert("点了div");
+		}else if(obj.nodeName=="P"){
+			alert("点了p");
+		}else if(obj.nodeName=="INPUT"){
+			alert("点了按钮");
+		}
+	}
+</script>
+</head>
+<body>
+<div onclick="myfn()">
+	<p>
+		<input type="button" value="按钮">
+	</p>
+</div>
+</body>
+</html>

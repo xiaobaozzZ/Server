@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input").click(function(){
+			//判断出全选
+			if(this.id=="c5"){
+				$("input:not(this)").attr("checked",this.checked);
+			}
+		//统计价格
+		var total=0;
+		//得到除了全选的其它几个input
+		$("input:not(#c5)").each(function(){
+			if(this.checked){
+				total+=parseInt(this.value);
+			}
+		})
+		//显示total
+		$("p").text("总价: "+total+"元");
+		});
+	});
+</script>
+</head>
+<body>
+<h3>订单练习</h3>
+<input type="checkbox" id="c1" value="20" ><label for="c1">鼠标20元</label><br>
+<input type="checkbox" id="c2" value="80" ><label for="c2">键盘80元</label><br>
+<input type="checkbox" id="c3" value="3000"><label for="c3">华为手机3000元</label><br>
+<input type="checkbox" id="c4" value="5000"><label for="c4">苹果手机5000元</label><br>
+<input type="checkbox" id="c5"><label for="c5">全选</label><br>
+<p>总价: 0元</p>
+</body>
+</html>

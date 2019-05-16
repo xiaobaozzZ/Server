@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* function Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.run = function(){
+			alert("我叫"+this.name+"今年"+this.age);
+			
+		}
+	}
+	var p = new Person("张三",6);
+	p.run(); */
+	/* function Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.run = function(){
+			alert(this.name+this.age);
+		}
+	}
+	var p = new Person("xiaoming",8);
+	p.run(); */ 
+	//第一种实例化对象的方式
+	/* function Person(){}
+	 var p = new Person();
+	p.name = "张三";
+	p.age = 8;
+	p.run = function(){
+		alert("我叫"+this.name+"今年"+this.age);
+	}  */
+	//p.run();
+	/* function Person(){}
+	var p = new Person();
+	p.name = "ming";
+	p.age = 9;
+	p.run = function(){alert(this.name+this.age);}
+	p.run(); */
+	//第二种实例化对象的方式
+	/* var p2 = {
+			"name":"小明",
+			"age":9,
+			"run":function(){
+				alert("我叫"+this.name+"今年"+this.age);
+			}
+	}
+	p2.run(); */
+	var p = {"name":"明","age":6,"run":function(){alert(this.name+this.age);}}
+	p.run();
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

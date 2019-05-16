@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片推进2</title>
+<style type="text/css">
+	div{
+		width:200px;
+		height:200px;
+		position: relative;
+		overflow:hidden;
+	}
+	img{
+		width:200px;
+		height:200px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].style.left=i*200+"px";
+		}
+	}
+	var timer = setInterval(changeImg,2000);
+	function changeImg(){
+		var moveTimer = setInterval(function(){
+			var imgs = document.getElementsByTagName("img");
+			for(var i=0;i<imgs.length;i++){
+				var left = parseInt(imgs[i].style.left);
+				left-=3;
+				if(left<=-200){
+					left=400;
+					clearInterval(moveTimer);
+				}
+				imgs[i].style.left=left+"px";
+			}
+		},10);
+	}
+	function stop(){
+		clearInterval(timer);
+	}
+	function start(){
+		stop();
+		timer = setInterval(changeImg,2000);
+	}
+	onblur = function(){
+		stop();
+	}
+	onfocus = function(){
+		start();
+	}
+</script>
+</head>
+<body>
+<div onmouseover ="stop()" onmouseout="start()">
+	<img src="../qb/5.jpg">
+	<img src="../qb/6.jpg">
+	<img src="../qb/7.jpg">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

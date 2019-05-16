@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		//得到文本框和div
+		var i = document.getElementById("i1");
+		var d = document.getElementById("d1");
+		//去除文本框的文本绘到div
+		d.innerText = i.value;
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="i1">
+	<input type="button" value="按钮" onclick="myfn()">
+	<div id="d1"></div>
+</body>
+</html>

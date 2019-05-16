@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>基本过滤选择器</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+div,span {
+	width: 140px;
+	height: 140px;
+	margin: 20px;
+	background: #9999CC;
+	border: #000 1px solid;
+	float: left;
+	font-size: 17px;
+	font-family: Roman;
+}
+
+div.mini {
+	font-size: 14px;
+    height: 53px;
+    width: 47px;
+	background: #CC66FF;
+	border: #000 1px solid;
+	font-family: Roman;
+}
+input{ margin: 5px 5px; }
+</style>
+
+<!--引入jquery的js库-->
+<script src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/* ---------属性选择器练习--------- */
+		//改变包含id属性的 div 元素的背景色为 #FF6347" id="b1"
+		$("#b1").click(function(){
+			$("div[id]").css("background-color","#FF6347");
+		})
+		
+
+		//改变包含属性title='aa' 的div 元素的背景色为 #9ACD32" id="b2"
+		$("#b2").click(function(){
+			$("div[title='aa']").css("background-color","#9ACD32");
+		})
+		
+
+		//改变type属性不等于button的input 元素的背景色为 #FF0033" id="b3" 
+		$("#b3").click(function(){
+			$("input[type!='button']").css("background-color","#FF0033");
+		})
+		
+		
+
+		//=================================================
+
+		/* ---------子元素选择器练习--------- */
+
+		//改变div 第二个子元素的背景色为 #006400"  id="b4"
+		$("#b4").click(function(){
+			$("div:nth-child(2)").css("background-color","#006400");
+		})
+		
+
+		//改变div 第一个子元素的背景色为 #FF69B4"  id="b5"
+		$("#b5").click(function(){
+			$("div:first-child").css("background-color","#FF69B4");
+		})
+
+		
+	})
+</script>
+</head>
+
+<body>
+	<input type="button" value=" 改变包含id属性的 div 元素的背景色为 #FF6347" id="b1" />
+	<input type="button" value=" 改变包含属性title='aa' 的div 元素的背景色为 #9ACD32" id="b2" />
+	<input type="button" value=" 改变type属性不等于button的input 元素的背景色为 #FF0033" id="b3" />
+
+	<hr/>
+	<hr/>
+
+	
+	<input type="button" value=" 改变div 第二个子元素的背景色为 #006400"  id="b4" />
+	<input type="button" value=" 改变div 第一个子元素的背景色为 #FF69B4"  id="b5" />
+
+	<h1>天气冷了</h1>
+
+	<div id="one">id为one</div>
+
+	<div id="two">
+		id为two
+		<div class="mini"> class是 mini</div>
+	</div>
+
+	<div class="one" title="aa">
+		class是 one title为aa
+		<div class="mini"> class是 mini</div>
+		<div class="mini"> class是 mini</div>
+	</div>
+	<div class="one" title="bb">
+		class是 one title为bb
+		<div class="mini01"> class是 mini01</div>
+		<div class="mini"> class是 mini</div>
+	</div>
+
+	<br>
+	<div id="mover">id为mover 动画</div>
+	<br>
+	<input type="submit"/>
+</body>
+</html>
+
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#d1{
+		width:100px;
+		height:100px;
+		background-color: red;
+		/*单独给某一个方向添加外边距
+		margin-left/top/right/bottom */
+		/* margin-top:50px;
+		margin-left:30px;
+		margin-bottom:20px; */
+		/* margin:50px; *//* 四个方向全是50 */
+		/* margin:20px 40px; *//*上下20 左右40*/
+		/* margin:0 auto; *//*居中*/
+		margin:10px 20px 30px 40px;/*上右下左		顺时针*/
+	}
+	#d2{
+		width:100px;
+		height:100px;
+		background-color: green;
+		margin-top:50px;
+	}
+	/*body元素自带8个像素的外边距*/
+	body{
+		margin:0;/*去掉body自带的外边距*/
+	}
+	span{
+		background-color: blue;
+	}
+	#s1{
+		margin-bottom:50px;
+		margin-left:30px;
+		margin-right:20px;
+	}
+</style>
+</head>
+<body>
+	<span id="s1">span1</span><span id="s2">span2</span>
+	<div id="d1">div1</div>
+	<div id="d2">div2</div>
+</body>
+</html>

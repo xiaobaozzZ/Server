@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function get(sum){
+			var i1 = document.getElementById("i1");
+			var i2 = document.getElementById("i2");
+			var d1 = document.getElementById("d1");
+			switch(sum){
+				case 1:d1.innerText = parseFloat(i1.value)+parseFloat(i2.value);
+				break;
+				case 2:d1.innerText = parseFloat(i1.value)-parseFloat(i2.value);
+				break;
+				case 3:d1.innerText = parseFloat(i1.value)*parseFloat(i2.value);
+				break;
+				case 4:d1.innerText = parseFloat(i1.value)/parseFloat(i2.value);
+				break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="i1">
+	<input type="text" id="i2">
+	<input type="button" value="+" onclick="get(1)">
+	<input type="button" value="-" onclick="get(2)">
+	<input type="button" value="*" onclick="get(3)">
+	<input type="button" value="/" onclick="get(4)">
+	<div id="d1"></div>
+</body>
+</html>

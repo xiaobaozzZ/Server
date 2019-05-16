@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>显示所有用户</title>
+</head>
+<body>
+	<center>
+		<h1>用户列表</h1>
+		<table border = "1">
+			<tr>
+				<td>用户名</td>
+				<td>密码</td>
+				<td>昵称</td>
+				<td>年龄</td>
+			</tr>
+			<tr th:each="user : ${list}">
+				<td th:text="${user.username}">1</td>
+				<td th:text="${user.password}">1</td>
+				<td th:text="${user.nickname}">1</td>
+				<td th:text="${user.age}">1</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

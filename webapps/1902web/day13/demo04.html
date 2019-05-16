@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input").click(function(){
+			var tr = $("<tr></tr>");
+			var nametd = $("<td></td>");
+			var pricetd = $("<td></td>");
+			var numtd = $("<td><input type='button' value='-' onclick='numfn(-1)'><span>1</span><input type='button' value='+' onclick='numfn(1)'></td>");
+			var moneytd = $("<td></td>");
+			var deltd = $("<td><input type='button' value='删除'></td>");
+			deltd.children().click(function(){
+				$(this).parent().parent().remove();
+				cal();
+			})
+			/*.eq()方法可以从数组中获得jq对象*/
+			var name = $(this).parent().siblings().eq(0).text();
+			var price = $(this).parent().siblings().eq(1).text();
+			nametd.text(name);
+			pricetd.text(price);
+			moneytd.text(price);
+			//把td装进tr
+			$(tr).append(nametd);
+			$(tr).append(pricetd);
+			$(tr).append(numtd);
+			$(tr).append(moneytd);
+			$(tr).append(deltd);
+			//把tr装进第二个table里面
+			$("tr:last").before(tr);
+			cal();
+		});
+	});
+	function numfn(i){
+		var obj = event.target||evert.srcElement;
+		var num = parseInt($(obj).siblings("span").text());
+		num+=i;
+		if(num<1){
+			num=1;
+		}
+		$(obj).siblings("span").text(num);
+		
+		var per = parseInt($(obj).parent().prev().text());
+		parseInt(per)*parseInt(num);
+		$(obj).parent().next().text(per*num);
+		//计算总价
+		cal();
+	}
+	//计算总价
+	function cal(){
+		var total = 0;
+		//得到第二个table里面所有的tr
+		$("table:last tr").each(function(){
+			var money = parseInt($(this).children().eq(3).text());
+			if(!isNaN(money)){
+				total+=money;
+			}
+		});
+		$("td:last").text("总价: "+total+"元");
+	};
+</script>
+<style type="text/css">
+	table{
+		margin: 0 auto;
+		width:60%;
+		border:1px solid red;
+		/* 将两条线合并成一条线 */
+		border-collapse: collapse;
+		margin-bottom: 100px;
+	}
+	td,th{
+		border:1px solid red;
+		text-align: center;
+	}
+	#zj{
+		text-align: left;
+	}
+</style>
+</head>
+<body>
+	<table>
+		<caption>特价商品</caption>
+		<tr>
+			<th>商品名称</th>
+			<th>单价</th>
+			<th>库存</th>
+			<th>好评率</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>水杯</td>
+			<td>25</td>
+			<td>100</td>
+			<td>90%</td>
+			<td><input type="button" value="加入购物车"></td>
+		</tr>
+		<tr>
+			<td>双飞燕鼠标</td>
+			<td>50</td>
+			<td>210</td>
+			<td>95%</td>
+			<td><input type="button" value="加入购物车"></td>
+		</tr>
+		<tr>
+			<td>键盘</td>
+			<td>150</td>
+			<td>50</td>
+			<td>98%</td>
+			<td><input type="button" value="加入购物车"></td>
+		</tr>
+		<tr>
+			<td>联想电脑</td>
+			<td>5000</td>
+			<td>888</td>
+			<td>99%</td>
+			<td><input type="button" value="加入购物车"></td>
+		</tr>
+	</table>
+	
+	<table>
+		<caption>购物车</caption>
+		<tr>
+			<th>商品名称</th>
+			<th>单价</th>
+			<th>数量</th>
+			<th>金额</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td colspan="5" id="zj">总价:0元</td>
+		</tr>
+	</table>
+</body>
+</html>

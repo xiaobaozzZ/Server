@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		var i = document.getElementById("i1");
+		var u = document.getElementById("myul");
+		u.innerHTML += "<li>"+i.value+"</li>";
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="i1">
+	<input type="button" value="添加" onclick="myfn()">
+	<ul id="myul"></ul>
+</body>
+</html>

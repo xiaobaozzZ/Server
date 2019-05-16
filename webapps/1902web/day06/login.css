@@ -1,0 +1,94 @@
+@charset "UTF-8";
+	header{
+		width: 1200px;
+		margin: 0 auto;
+	}
+	header>#top_left>img{
+		float: left;
+		vertical-align: middle;
+   		width: 100px;
+   		margin-right: 30px;
+	}
+	header>#top_right{
+		float: right;
+	}
+	header>#top_left>p{
+		display:inline-block;
+		color: #333;
+    	margin-left: 20px;
+   	 	vertical-align: middle;
+   	 	
+	}
+	#b1{
+	    background: #ffa000;
+   		border-radius: 3px;
+    	color: #fff;
+    	font-size: 14px;
+    	padding: 3px 15px;
+    	border:0;
+    
+	}
+	#b2{
+		border: 1px solid #ccc;
+   	 	border-radius: 3px;
+    	color: #63696d;
+    	font-size: 14px;
+    	padding: 3px 15px;
+    	border-color: #1479e1;
+    	color: #1479e1;
+	}
+	div{
+		display:inline-block;
+	}
+	#top_right{
+		margin-top: 13px;
+	}
+	#top_right>label{
+		color: #ccc;
+	}
+	article{
+		background-image: url("../Camera Roll/a.jpg");
+		height: 568px;
+    	min-width: 1200px;
+    	overflow: hidden;
+    	position: relative;
+    	width: 100%;
+	}
+	article>div{
+		background: rgba(255,255,255,0.5);
+    	border-radius: 2px;
+    	display: inline-block;
+    	min-height: 320px;
+    	padding: 38px 28px 21px;
+    	width: 320px;
+    	float: right;
+    	margin-right: 200px;
+    	margin-top: 100px;
+	}
+	article>div>p{
+		text-align: center;
+		font-size: 20px;
+	}
+	article>div>img{
+		width: 264px;
+		margin-left: 30px;
+	}
+	article>div>input{
+		background-color: #fff;
+    	border: 1px solid #dcdee2;
+    	border-radius: 2px;
+    	box-sizing: border-box;
+    	color: #333;
+    	font-size: 14px;
+    	outline: none;
+    	padding: 10px;
+    	width: 100%;
+	}
+	article>div>input[type='submit']{
+		margin-top: 25px;
+		background: #1787fb;
+    	border-color: #1787fb;
+    	border-width: 1px;
+    	color: #fff;
+	}
+	

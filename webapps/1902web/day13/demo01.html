@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>省市联动</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	var arr = [["郑州","周口","商丘"],["合肥","阜阳","安庆"],["秦皇岛","唐山","石家庄"]];
+	$(function(){
+		$("select:first").change(function(){
+			$("select:last").html("<option>请选择</option>");
+			var ar = arr[$("select:first").val()];
+			for(var i=0;i<ar.length;i++){
+				var op = $("<option>"+ar[i]+"</option>");
+				$("select:last").append(op);
+			}
+		});
+	});
+	
+</script>
+</head>
+<body>
+<select>
+	<option>请选择</option>
+	<option value="0">河南</option>
+	<option value="1">安徽</option>
+	<option value="2">河北</option>
+</select>
+<select>
+	<option>请选择</option>
+	
+</select>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

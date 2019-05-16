@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片推进循环</title>
+<style type="text/css">
+	div{
+		width:200px;
+		height:250px;
+		position: relative;
+		overflow: hidden;
+	}
+	img{
+		width:200px;
+		height:250px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		//得到所有图片
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			imgs[i].style.left = i*200+"px";
+		}
+	}
+	//创建定时器调用换图片的方法
+	var timer = setInterval(changeImg,2000);
+	function changeImg(){
+		//开启移动图片的定时器
+		var moveTimer = setInterval(function(){
+			//得到所有图片
+			var imgs = document.getElementsByTagName("img");
+			for(var i=0;i<imgs.length;i++){
+				//得到原来left的值
+				var left = parseInt(imgs[i].style.left);
+				left-=3;
+				//判断图片移动完成
+				if(left<=-200){
+					left=400;
+					//停止定时器
+					clearInterval(moveTimer);
+				}
+				imgs[i].style.left = left+"px";
+			}
+		},10);
+	}
+	function stop(){
+		clearInterval(timer);
+	}
+	function start(){
+		stop();
+		timer = setInterval(changeImg,2000);
+	}
+	onblur = function(){
+		stop();
+	}
+	onfocus = function(){
+		start();
+	}
+</script>
+</head>
+<body>
+<div onmouseover="stop()" onmouseout="start()">
+	<img src="../qb/2.jpg">
+	<img src="../qb/5.jpg">
+	<img src="../qb/b.jpg">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

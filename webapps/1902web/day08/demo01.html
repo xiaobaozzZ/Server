@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>九宫格</title>
+<script type="text/javascript">
+	function myfn(){
+		var d = document.getElementById("d1");
+		for(var i=0;i<9;i++){
+			var color = i%2==0?"green":"pink";
+			d.innerHTML+="<div class='"+color+"'></div>";
+		}
+	}
+</script>
+<style type="text/css">
+	#d1{
+		width:300px;
+		height:300px;
+		border: 2px solid red;
+	}
+	.green{
+		width:100px;
+		height:100px;
+		background-color: green;
+		float:left;
+	}
+	.pink{
+		width:100px;
+		height:100px;
+		background-color:pink;
+		float:left;
+	}
+</style>
+</head>
+<body>
+<input  type="button" value="按钮" onclick="myfn()">
+<div id="d1"></div>
+</body>
+</html>

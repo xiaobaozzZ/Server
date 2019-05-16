@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" >
+		<table border="1" cellspacing="0" align="center">
+			<caption>注册表单</caption>
+			<tr>
+				<td>用户名:</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>密码:</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>确认密码:</td>
+				<td><input type="password" name="spassword"></td>
+			</tr>
+			<tr>
+				<td>昵称:</td>
+				<td><input type="text" name="nickname"></td>
+			</tr>
+			<tr>
+				<td>性别:</td>
+				<td>
+					<input type="radio" name="gender" id="nan"><label for="nan">男</label>
+					<input type="radio" name="gender" id="nv" checked="checked"><label for="nv">女</label>
+				</td>
+			</tr>
+			<tr>
+				<td>爱好:</td>
+				<td>
+					<input type="checkbox" name="ai" id="code"><label>敲代码</label>
+					<input type="checkbox" name="ai" id="game"><label>打游戏</label>
+					<input type="checkbox" name="ai" id="witch"><label>看电视</label>
+				</td>
+			</tr>
+			<tr>
+				<td>生日:</td>
+				<td>
+					<input type="date" name="birthday">
+				</td>
+			</tr>
+			<tr>
+				<td>头像:</td>
+				<td>
+					<input type="file" name="pic">
+				</td>
+			</tr>
+			<tr>
+				<td>城市:</td>
+				<td>
+					<select>
+						<option>上海</option>
+						<option>北京</option>
+						<option selected="selected">广州</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>自我介绍:</td>
+				<td>
+					<textarea rows="3" cols="20" name="text" placeholder="说点什么吧"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>验证码:</td>
+				<td>
+					<input type="text" name="yanzheng">
+					<img src="../logo.jpg" width="50px" height="20px">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit">
+					<input type="reset">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

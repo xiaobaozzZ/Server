@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>省市联动</title>
+<script type="text/javascript">
+	var arr = [["郑州","周口","商丘"],["合肥","阜阳","安庆"],["秦皇岛","唐山","石家庄"]];
+	function fn(){
+		s2.innerHTML = "<option>请选择</option>";
+		var ar = arr[s1.value];
+		alert(ar);
+		for(var i=0;i<ar.length;i++){
+			var op = document.createElement("option");
+			op.innerText = ar[i];
+			s2.appendChild(op);
+		}
+	}
+	
+</script>
+</head>
+<body>
+<select id="s1" onchange="fn()" onclick="fn1">
+	<option>请选择</option>
+	<option value="0">河南</option>
+	<option value="1">安徽</option>
+	<option value="2">河北</option>
+</select>
+<select id="s2">
+	<option>请选择</option>
+	
+</select>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

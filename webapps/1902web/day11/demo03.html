@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>植物大战僵尸</title>
+<style type="text/css">
+	body{
+		background-image:url("../zw/bg1.jpg");
+		margin: 0;
+	}
+	img{
+		width:100px;
+		height:100px;
+		position: absolute;
+	}
+	#success_h3{
+		float: left;
+	}
+	#fail_h3{
+		float: right;
+		color: white;
+	}
+	body{
+		overflow: hidden;
+	}
+</style>
+<script type="text/javascript">
+	var successCount = 0;
+	var failCount = 0;
+	onload = function(){
+		changeBG();
+	}
+	//窗口尺寸改变事件
+	onresize = function(){
+		changeBG();
+	}
+	function changeBG(){
+		//获取窗口的宽高
+		var w = document.body.clientWidth;
+		var h = document.body.parentElement.clientHeight;
+		document.body.style.backgroundSize = w+"px "+h+"px";
+	}
+	//开起添加僵尸图片的定时器
+	setInterval(function(){
+		var zomb = document.createElement("img");
+		//设置显示图片
+		var type = parseInt(Math.random()*4);
+		zomb.src = "../zw/zomb"+type+".png";
+		//设置僵尸位置
+		var w = document.body.clientWidth;
+		zomb.style.left = w+"px";
+		var h = document.body.parentElement.clientHeight;
+		zomb.style.top = parseInt(Math.random()*(h-100))+"px";
+		document.body.appendChild(zomb);
+		//给僵尸图片添加鼠标移入事件
+		zomb.onmouseover = function(){
+			//删除僵尸图片
+			document.body.removeChild(zomb);
+			//成功数量加1
+			successCount++;
+			success_h3.innerText = "成功数量:"+successCount;
+		}
+	},100);
+	function changeImg(){
+		//开启移动图片的定时器
+		var moveTimer = setInterval(function(){
+			//得到所有图片
+			var imgs = document.getElementsByTagName("img");
+			for(var i=0;i<imgs.length;i++){
+				//得到原来left的值
+				var left = parseInt(imgs[i].style.left);
+				left-=1+parseInt(successCount/20);
+				//判断图片移动完成
+				if(left<=-200){
+					left=400;
+					//停止定时器
+					clearInterval(moveTimer);
+				}
+				imgs[i].style.left = left+"px";
+			}
+		},10);
+	}
+	//开启移动僵尸的定时器
+	var moverTimer = setInterval(function(){
+		//得到所有僵尸图片
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			//得到原来left的值
+			var left = parseInt(imgs[i].style.left);
+			left-=3;
+			imgs[i].style.left = left+"px";
+			if(left<0){
+				document.body.removeChild(imgs[i]);
+				//失败数量+1
+				failCount++;
+				fail_h3.innerText = "失败数量:"+failCount;
+				if(failCount>=20){
+					alert("Game Over 你游戏打的真蔡");
+					//停止移动
+					clearInterval(moverTimer);
+					//删除所有僵尸
+					var arr = document.getElementsByTagName("img");
+					//有多少个僵尸就循环多少次
+					for(var j=0;j<arr.length+j;j++){
+						//因为数组会发生改变所以每次都删除数组里面的第一个
+						document.body.removeChild(arr[0]);
+					}
+				}
+			}
+		}
+	},10);
+
+</script>
+</head>
+<body>
+<h3 id="success_h3">成功数量:0</h3>
+<h3 id="fail_h3">失败数量:0</h3>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

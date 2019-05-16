@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 
+		元数据<meta>,其中charset是用来告知浏览器当前页面中出现的文本数据应当用什么字符集
+		凡是将来浏览器看到中文是乱码的,都是这里出现的问题,注意拼写
+	 -->
+<meta charset="UTF-8">
+<title>lbw网页响应测试网页</title>
+</head>
+<body>
+	<center>
+	<!-- 在页面上我们也经常使用路径指定某个资源的位置,比如下面指定图片的位置. 而这里指定位置的路径也常使用相对路径,
+	在页面上相对路径中"./"对应的当前目录   浏览器会认为是当前页面所在的目录.例如:
+	当我们访问当前页面时在浏览器输入的路径为:
+	http://localhost:8088/myweb/index.html那么浏览器会认为"./"表示的是:
+	http://localhost:8088/myweb
+	因此下面图片指定的路径src="./logo.jpg的实际路径:http://localhost:8088/myweb/logo.jpg" -->
+	<img src="./logo.jpg">
+	<br>
+	<input type = "text" size = "32">
+	<input type = "button" value = "google" onclick = "alert('没有搜索资金,请充值')">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href = "./reg.html" onclick = "alert('并没有隐藏界面')">点我开启隐藏界面</a>
+	<br>
+	<a href = "./login.html">登录</a>
+	<br>
+	<a href = "./showAllUser">用户列表</a>
+	</center>
+</body>
+</html>

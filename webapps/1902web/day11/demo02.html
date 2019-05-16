@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>QQ分组</title>
+<script type="text/javascript">
+	onload = function(){
+		var uls = document.getElementsByClassName("c1");
+		for(var i=0;i<uls.length;i++){
+		uls[i].style.display = "none";
+		}
+	}
+	function fn(li){
+		var ul = li.getElementsByTagName("ul")[0];
+		ul.style.display = ul.style.display=="none"?"block":"none";
+		var uls = document.getElementsByClassName("c1");
+		for(var i=0;i<uls.length;i++){
+			if(uls[i]!=ul){
+				uls[i].style.display = "none";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<ul>
+	<li onclick="fn(this)">A
+		<ul class="c1">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+		</ul>
+	</li>
+	<li onclick="fn(this)">一
+		<ul class="c1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</li>
+	<li onclick="fn(this)">ONE
+		<ul class="c1">
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

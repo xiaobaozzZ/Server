@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input").click(function(){
+			if(this.value=="隐藏"){
+				$("img").hide(3000);
+			}else if(this.value=="显示"){
+				$("img").show(2000);
+			}else if(this.value=="淡出"){
+				$("img").fadeOut(1000);
+			}else if(this.value=="淡入"){
+				$("img").fadeIn(2000);
+			}else if(this.value=="上滑"){
+				$("img").slideUp(2000);
+			}else if(this.value=="下滑"){
+				$("img").slideDown(2000);
+			}else{
+				$("img").animate({"left":"200px"},2000).animate({"top":"200px"},2000).animate({"left":"0px"},2000).animate({"top":"0px"},2000)
+				.animate({"width":"200px"},1000).animate({"width":"500px"},1000).fadeOut(3000,function(){
+					$("img").remove();
+				})
+			}
+		});
+	});
+</script>
+<style type="text/css">
+	img{
+		width: 500px;
+		position: relative;
+	}
+</style>
+</head>
+<body>
+<input type="button" value="隐藏">
+<input type="button" value="显示">
+<input type="button" value="淡出">
+<input type="button" value="淡入">
+<input type="button" value="上滑">
+<input type="button" value="下滑">
+<input type="button" value="自定义">
+<hr>
+<img src="../Camera Roll/4.jpg">
+</body>
+</html>

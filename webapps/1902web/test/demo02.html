@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.red{
+		width: 50px;
+		height: 50px;
+		background-color: red;
+		margin-left: 20px;
+		margin-top: 20px;
+		display: inline-block;
+	}
+</style>
+<script type="text/javascript">
+	function fn(){
+		var i1 = document.getElementById("i1");
+		var i2 = document.getElementById("i2");
+		var d = document.getElementById("d1");
+		var row = parseInt(i1.value);
+		var col = parseInt(i2.value);
+		for(var i=0;i<row;i++){
+			for(var j=0;j<col;j++){
+				d.innerHTML+="<div class='red'></div>"
+			}
+			d.innerHTML+="<br>"
+		}
+	}
+</script>
+</head>
+<body>
+<input type="text" placeholder="请输入行数" id="i1">
+<input type="text" placeholder="请输入列数" id="i2">
+<input type="button" value="添加" onclick="fn()">
+<div id="d1"></div>
+</body>
+</html>

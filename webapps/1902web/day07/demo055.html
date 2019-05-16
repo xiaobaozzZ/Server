@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function myfn() {
+			var i = document.getElementById('i1');
+			var d = document.getElementById('d1');
+			if (isNaN(i.value)) {
+				d.innerText = "输入的不是数字";
+			}else{
+				d.innerText = parseFloat(i.value)+parseFloat(i.value);
+			}		
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="i1">
+	<input type="button" value="相加" onclick="myfn()">
+	<div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>行和列</title>
+<script type="text/javascript">
+	function fn(){
+	//	var i1 = document.getElementById("i1");
+	//	var i2 = document.getElementById("i2");
+	//	var d = document.getElementById("d1");
+		for(var i=0;i<i1.value;i++){
+			for(var j=0;j<i2.value;j++){
+				d1.innerHTML +="<div></div>"; 
+			}
+			d1.innerHTML +="<br>";
+		}
+	}
+</script>
+<style type="text/css">
+	div>div{
+		width:20px;
+		height:20px;
+		margin:5px;
+		background-color: red;
+		display:inline-block;
+	}
+</style>	 
+</head>
+<body>
+<input type="text" placeholder="输入行数"  id="i1">
+<input type="text" placeholder="输入列数"  id="i2">
+<input type="button" value="添加" onclick="fn()">
+<div id="d1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
